@@ -82,6 +82,14 @@ using FichaAtendimento.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Pages\RemoveFicha.razor"
+using FichaAtendimento.Shared.Model;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/RemoveFicha/{id}")]
     public partial class RemoveFicha : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -89,6 +97,38 @@ using FichaAtendimento.Client.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 28 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Pages\RemoveFicha.razor"
+       
+
+    [Parameter]
+    public string id { get; set; }
+    Ficha newFicha = new Ficha();
+
+    protected override async Task OnInitializedAsync()
+    {
+        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
+    }
+
+
+    private async Task DeleteFicha()
+    {
+        await Http.DeleteAsync($"api/Fichas/{id}");
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

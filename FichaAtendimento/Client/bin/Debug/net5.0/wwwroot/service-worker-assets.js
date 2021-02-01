@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-1mXNC6vzR0ShcxtN9C+rTYhrBKlsbF7uY7ILfq9cBNc=",
+      "hash": "sha256-uo70dkEX19OJoOc+\/vBX1vqlo0TcsF1wZCGcVKMOm7E=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -785,19 +785,19 @@
       "url": "_framework\/dotnet.5.0.2.js"
     },
     {
-      "hash": "sha256-FlTX1p7VEmOUWH2DbVGzjDnLjleTWGgYKGFbuyqsWeU=",
+      "hash": "sha256-\/Sg2\/qR3jIjKMnZtmRXp+XJLWTy5JjcDW14aKUoc5D4=",
       "url": "_framework\/FichaAtendimento.Shared.dll"
     },
     {
-      "hash": "sha256-cMCq7KT7zEWQPS3PKfqBH5cfEUyCY+0V7nUPZBKEndI=",
+      "hash": "sha256-VQUtFj7ja0wJg8gZPX3TzRZirqiINdzmIOzCsUXGyC8=",
       "url": "_framework\/FichaAtendimento.Shared.pdb"
     },
     {
-      "hash": "sha256-WmmH5dQSpb33VugHyTrf1+70z3ktOkLVze0fDZla7lY=",
+      "hash": "sha256-MqaEB4lNdMPocBSSRgv91UpunFKaCYnJkp0YgEPt9ms=",
       "url": "_framework\/FichaAtendimento.Client.dll"
     },
     {
-      "hash": "sha256-zjaLWfsRpZHYmHj2x6iO2\/p7JwIJltg4Cn8SoVvkLZg=",
+      "hash": "sha256-qVnUnnz\/MwHDXu88dzQgPDbNUarsmyHdAJoLRhfx+S4=",
       "url": "_framework\/FichaAtendimento.Client.pdb"
     },
     {
@@ -1585,11 +1585,11 @@
       "url": "_framework\/dotnet.5.0.2.js.gz"
     },
     {
-      "hash": "sha256-mVbDfQMeD4cp0gIWPODZ8Wlr0Pi5SWS6u0dibyXDzOQ=",
+      "hash": "sha256-M\/067wfxa72eBtjq6Bu740CHxZJ+ujOwJ8OSxD4V8iM=",
       "url": "_framework\/FichaAtendimento.Shared.dll.gz"
     },
     {
-      "hash": "sha256-8aM9R9K90X6h+KPDW4OzrEh071mAs7dvAQxjBxAZQAc=",
+      "hash": "sha256-+WarPhPCewdI\/6tA\/0gr1DwGOtu\/JUNG8luGWPBssxw=",
       "url": "css\/app.css"
     },
     {
@@ -1637,12 +1637,16 @@
       "url": "css\/open-iconic\/README.md"
     },
     {
-      "hash": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
+      "hash": "sha256-QLop\/xB+YCNdbbK7MHyGTNVwZeYGmV8v1fLVqh9tm2Y=",
       "url": "favicon.ico"
     },
     {
       "hash": "sha256-IpHFcQvs03lh6W54zoeJRG1jW+VnGmwymzxLoXtKX7Y=",
       "url": "icon-512.png"
+    },
+    {
+      "hash": "sha256-yTQZPX9Yi1Z3+AxYamrs06zNd0o271rEALf4B3ejqto=",
+      "url": "img\/simboloPsico.png"
     },
     {
       "hash": "sha256-eQ1ENaL5oGKoK7b\/jr0iok9gXgo+06Hj2FZy\/xBfLCU=",
@@ -1661,5 +1665,5 @@
       "url": "FichaAtendimento.Client.bundle.scp.css"
     }
   ],
-  "version": "SnCoVfID"
+  "version": "jvPccpzf"
 };

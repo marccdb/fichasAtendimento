@@ -19,7 +19,7 @@ namespace FichaAtendimento.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("FichaAtendimento.Server.Model.Ficha", b =>
+            modelBuilder.Entity("FichaAtendimento.Shared.Model.Ficha", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

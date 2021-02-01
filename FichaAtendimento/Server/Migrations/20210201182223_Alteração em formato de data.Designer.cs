@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FichaAtendimento.Server.Migrations
 {
     [DbContext(typeof(FichaContext))]
-    [Migration("20210131221034_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20210201182223_Alteração em formato de data")]
+    partial class Alteraçãoemformatodedata
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace FichaAtendimento.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("FichaAtendimento.Server.Model.Ficha", b =>
+            modelBuilder.Entity("FichaAtendimento.Shared.Model.Ficha", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

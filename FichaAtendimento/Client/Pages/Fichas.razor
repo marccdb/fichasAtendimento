@@ -1,11 +1,13 @@
-﻿@page "/fichasatendimento"
+﻿@page "/Fichasatendimento"
 @using FichaAtendimento.Shared.Model
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
 
 <div style="display: inline-flex">
     <h1 style="display: inline; margin-right: 30px">Fichas de Atendimento</h1>
-    <button style="display:inline; align-self: center" class="btn btn-primary">NOVA FICHA</button>
+    <button @onclick="@NovaFicha" style="display:inline; align-self: center" class="btn btn-primary">NOVA FICHA</button>
 </div>
+<br>
 
 @if (fichas == null)
 {
@@ -20,8 +22,8 @@ else
                 <th>Resumo do Atendimento</th>
                 <th>Conduta Clínica</th>
                 <th>CID10/DSM</th>
-                <th>Prox. Tarefa</th>
-                <th>Abordagem Prox. Sessão</th>
+                <th>Próxima Tarefa</th>
+                <th>Abordagem na Proxima Sessão</th>
                 <th>Data Atendimento</th>
                 <th>Sessão Paga?</th>
                 <th>Recibo Entregue?</th>
@@ -78,5 +80,11 @@ else
 
     private string sessaoPaga;
     private string reciboEntregue;
+
+    private void NovaFicha()
+    {
+        NavigationManager.NavigateTo("/addficha");
+    }
+
 
 }

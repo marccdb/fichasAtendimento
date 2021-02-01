@@ -26,7 +26,11 @@ namespace FichaAtendimento.Shared.Model
 
         [Required]
         [Column(TypeName = "date")]
-        public DateTime DataAtendimento { get; set; }
+        public DateTime DataAtendimento
+        {
+            get { return DateTime.Now; }
+            set { }
+        }
 
         public string AbordagemProxSessao { get; set; }
 

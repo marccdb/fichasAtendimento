@@ -634,3 +634,9 @@ E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5
 E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\service-worker-assets.js
 E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Fichas.razor.g.cs
 E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\Razor\Pages\Fichas.razor.g.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AddFicha.razor.g.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\RazorDeclaration\Pages\EditFicha.razor.g.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\RazorDeclaration\Pages\RemoveFicha.razor.g.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\Razor\Pages\AddFicha.razor.g.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\Razor\Pages\EditFicha.razor.g.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Debug\net5.0\Razor\Pages\RemoveFicha.razor.g.cs

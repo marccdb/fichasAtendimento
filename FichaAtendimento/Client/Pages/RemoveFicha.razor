@@ -1,5 +1,52 @@
-﻿<h3>RemoveFicha</h3>
+﻿@page "/RemoveFicha/{id}"
+@using FichaAtendimento.Shared.Model
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<style>
+    .botao{
+        margin-right:20px;
+    }
+    .divBotoes{
+         margin-top: 50px;
+    }
+</style>
+
+<h3>Remover ficha</h3>
+<hr />
+
+<div class="row">
+    <h4>Tem certeza que deseja remover esta ficha?</h4>
+</div>
+<div class="row divBotoes">
+    <button @onclick="@Cancel" class="botao btn btn-secondary" value="Cancel">VOLTAR</button>
+    <button @onclick="@DeleteFicha" class="botao btn btn-danger" value="Delete">REMOVER</button>
+</div>
+
+
 
 @code {
+
+    [Parameter]
+    public string id { get; set; }
+    Ficha newFicha = new Ficha();
+
+    protected override async Task OnInitializedAsync()
+    {
+        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
+    }
+
+
+    private async Task DeleteFicha()
+    {
+        await Http.DeleteAsync($"api/Fichas/{id}");
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
 
 }

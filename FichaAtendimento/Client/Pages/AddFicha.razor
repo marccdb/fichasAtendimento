@@ -1,9 +1,9 @@
-﻿@page "/Editficha/{id}"
+﻿@page "/Addficha"
 @using FichaAtendimento.Shared.Model
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<h3>Editar ficha</h3>
+<h3>Adicionar nova ficha</h3>
 <hr />
 
 <style>
@@ -11,17 +11,18 @@
         margin-top: 10px;
     }
 
-    .divSessaoPaga {
+    .divSessaoPaga{
         margin-top: 10px;
     }
 
-    .divReciboEntregue {
+    .divReciboEntregue{
         margin-bottom: 10px;
     }
 
-    .checkbox {
+    .checkbox{
         margin-left: 10px;
     }
+
 </style>
 
 <EditForm Model="@newFicha" class="form">
@@ -38,7 +39,7 @@
                 <InputText form="CID10/DSM" class="form-control" @bind-Value="@newFicha.CID10_DSM"></InputText>
                 <label for="ProxTarefa" class="control-label">Próxima Tarefa:</label>
                 <InputText form="ProxTarefa" class="form-control" @bind-Value="@newFicha.ProxTarefa"></InputText>
-                <label for="AbordagemProxSessao" class="control-label">Abordagem Prox. Sessão:</label>
+                <label for="AbordagemProxSessao" class="control-label">Abordagem na Proxima Sessão:</label>
                 <InputTextArea form="AbordagemProxSessao" class="form-control" @bind-Value="@newFicha.AbordagemProxSessao"></InputTextArea>
                 <label for="DataAtendimento" class="control-label">Data do Atendimento:</label>
                 <InputDate class="form-control" @bind-Value="@newFicha.DataAtendimento" />
@@ -59,7 +60,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <button class="btn btn-primary" @onclick="@UpdateFicha" value="Update">Salvar Ficha</button>
+                <button class="btn btn-primary" @onclick="@CreateFicha" value="Save">Salvar Ficha</button>
                 <button class="btn btn-danger" @onclick="@Cancel" value="Cancel">Cancelar</button>
             </div>
         </div>
@@ -69,19 +70,13 @@
 
 @code {
 
-    [Parameter]
-    public string id { get; set; }
     Ficha newFicha = new Ficha();
 
-    protected override async Task OnInitializedAsync()
-    {
-        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
-    }
 
 
-    private async Task UpdateFicha()
+    private async Task CreateFicha()
     {
-        await Http.PutAsJsonAsync<Ficha>($"api/Fichas/{id}", newFicha);
+        await Http.PostAsJsonAsync<Ficha>("api/Fichas", newFicha);
         NavigationManager.NavigateTo("fichasatendimento");
     }
 

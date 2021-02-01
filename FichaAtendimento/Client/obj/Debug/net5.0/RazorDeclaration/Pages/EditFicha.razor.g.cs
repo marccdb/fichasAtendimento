@@ -82,6 +82,14 @@ using FichaAtendimento.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Pages\EditFicha.razor"
+using FichaAtendimento.Shared.Model;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Editficha/{id}")]
     public partial class EditFicha : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -89,6 +97,38 @@ using FichaAtendimento.Client.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 70 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Pages\EditFicha.razor"
+       
+
+    [Parameter]
+    public string id { get; set; }
+    Ficha newFicha = new Ficha();
+
+    protected override async Task OnInitializedAsync()
+    {
+        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
+    }
+
+
+    private async Task UpdateFicha()
+    {
+        await Http.PutAsJsonAsync<Ficha>($"api/Fichas/{id}", newFicha);
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

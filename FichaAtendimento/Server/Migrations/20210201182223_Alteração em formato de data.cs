@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FichaAtendimento.Server.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class Alteraçãoemformatodedata : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
