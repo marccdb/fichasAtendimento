@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace FichaAtendimento.Client.Shared
+namespace FichaAtendimento.Client.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,15 @@ using FichaAtendimento.Client.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class SurveyPrompt : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Pages\Fichas.razor"
+using FichaAtendimento.Shared.Model;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/fichasatendimento")]
+    public partial class Fichas : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,15 +98,23 @@ using FichaAtendimento.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Shared\SurveyPrompt.razor"
+#line 71 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Pages\Fichas.razor"
        
-    // Demonstrates how a parent component can supply parameters
-    [Parameter]
-    public string Title { get; set; }
+    private Ficha[] fichas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        fichas = await Http.GetFromJsonAsync<Ficha[]>("api/Fichas");
+    }
+
+    private string sessaoPaga;
+    private string reciboEntregue;
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

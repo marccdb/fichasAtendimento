@@ -1,4 +1,4 @@
-﻿using FichaAtendimento.Server.Model;
+﻿using FichaAtendimento.Shared.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

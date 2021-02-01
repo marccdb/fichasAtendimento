@@ -90,7 +90,7 @@ using FichaAtendimento.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Shared\NavMenu.razor"
+#line 23 "E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-ee2HIxC6Udf6InxPTPr81HbJTdJAxS7DGckXk21Dm04=",
+      "hash": "sha256-1mXNC6vzR0ShcxtN9C+rTYhrBKlsbF7uY7ILfq9cBNc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -785,19 +785,19 @@
       "url": "_framework\/dotnet.5.0.2.js"
     },
     {
-      "hash": "sha256-RQfopy7Xq+SBP6jjtyxTE28KsktUbpu1m8gFKLJSvVM=",
+      "hash": "sha256-FlTX1p7VEmOUWH2DbVGzjDnLjleTWGgYKGFbuyqsWeU=",
       "url": "_framework\/FichaAtendimento.Shared.dll"
     },
     {
-      "hash": "sha256-zRdIyq4BtKQwxs9ZWOwM9IkqUwX24RTpUMOrXprGpHM=",
+      "hash": "sha256-cMCq7KT7zEWQPS3PKfqBH5cfEUyCY+0V7nUPZBKEndI=",
       "url": "_framework\/FichaAtendimento.Shared.pdb"
     },
     {
-      "hash": "sha256-Ab0Y1hWGFKbDmif83ue7IPVK3SBAsrvvAPlgYMAgOds=",
+      "hash": "sha256-WmmH5dQSpb33VugHyTrf1+70z3ktOkLVze0fDZla7lY=",
       "url": "_framework\/FichaAtendimento.Client.dll"
     },
     {
-      "hash": "sha256-vd1avsiQZRPq77kuV29OXNwDViFtKCpvAhZ\/Lmhqshk=",
+      "hash": "sha256-zjaLWfsRpZHYmHj2x6iO2\/p7JwIJltg4Cn8SoVvkLZg=",
       "url": "_framework\/FichaAtendimento.Client.pdb"
     },
     {
@@ -1585,7 +1585,7 @@
       "url": "_framework\/dotnet.5.0.2.js.gz"
     },
     {
-      "hash": "sha256-vkttBiOoRpjoivlDLIkFhOyHEq9HCXF2fZdIg+iyh7A=",
+      "hash": "sha256-mVbDfQMeD4cp0gIWPODZ8Wlr0Pi5SWS6u0dibyXDzOQ=",
       "url": "_framework\/FichaAtendimento.Shared.dll.gz"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "FichaAtendimento.Client.bundle.scp.css"
     }
   ],
-  "version": "J7XLMqaM"
+  "version": "SnCoVfID"
 };

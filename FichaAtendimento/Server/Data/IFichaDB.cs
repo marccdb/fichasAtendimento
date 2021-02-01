@@ -1,4 +1,4 @@
-﻿using FichaAtendimento.Server.Model;
+﻿using FichaAtendimento.Shared.Model;
 using System.Collections.Generic;
 
 namespace FichaAtendimento.Server.Data
