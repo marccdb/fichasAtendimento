@@ -1,0 +1,12 @@
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\bin\Release\net5.0\FichaAtendimento.Shared.deps.json
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\bin\Release\net5.0\FichaAtendimento.Shared.dll
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\bin\Release\net5.0\ref\FichaAtendimento.Shared.dll
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\bin\Release\net5.0\FichaAtendimento.Shared.pdb
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.csprojAssemblyReference.cache
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.AssemblyInfoInputs.cache
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.AssemblyInfo.cs
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.csproj.CoreCompileInputs.cache
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.dll
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\ref\FichaAtendimento.Shared.dll
+E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Shared\obj\Release\net5.0\FichaAtendimento.Shared.pdb
