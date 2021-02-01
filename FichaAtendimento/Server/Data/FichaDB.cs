@@ -1,4 +1,5 @@
 ﻿using FichaAtendimento.Server.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FichaAtendimento.Server.Data
 {
-    public class FichaDB
+    public class FichaDB : IFichaDB
     {
 
         readonly FichaContext _fichaContext;
@@ -20,15 +21,24 @@ namespace FichaAtendimento.Server.Data
         {
             _fichaContext.Fichas.Add(ficha);
         }
-        
+
         public IEnumerable<Ficha> GetFichas()
         {
-            return _fichaContext.Fichas.ToList();
+            try
+            {
+                return _fichaContext.Fichas.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw new KeyNotFoundException();
+            }
+
         }
 
         public void UpdateFicha(Ficha ficha)
         {
-            _fichaContext.Fichas.Update(ficha);
+            _fichaContext.Entry(ficha).State = EntityState.Modified;
         }
 
         public Ficha GetFichaById(int id)
@@ -41,7 +51,10 @@ namespace FichaAtendimento.Server.Data
             _fichaContext.Fichas.Remove(ficha);
         }
 
-
+        public void SaveChanges()
+        {
+            _fichaContext.SaveChanges();
+        }
 
 
     }
