@@ -10,7 +10,7 @@ namespace FichaAtendimento.Server.Data
         public FichaContext (DbContextOptions<FichaContext> options) : base(options) { }
 
 
-        public DbSet<Ficha> Fichas { get; set; }
+        public DbSet<Atendimento> Atendimentos { get; set; }
 
         public DbSet<Paciente> Pacientes { get; set; }
 

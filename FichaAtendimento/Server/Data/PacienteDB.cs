@@ -15,12 +15,12 @@ namespace FichaAtendimento.Server.Data
             _fichaContext = fichaContext;
         }
 
-        public void AddNewFicha(Paciente paciente)
+        public void AddNewPaciente(Paciente paciente)
         {
             _fichaContext.Pacientes.Add(paciente);
         }
 
-        public IEnumerable<Paciente> GetFichas()
+        public IEnumerable<Paciente> GetPacientes()
         {
             try
             {
@@ -31,20 +31,19 @@ namespace FichaAtendimento.Server.Data
 
                 throw new KeyNotFoundException();
             }
-
         }
 
-        public void UpdateFicha(Paciente paciente)
+        public void UpdatePaciente(Paciente paciente)
         {
             _fichaContext.Entry(paciente).State = EntityState.Modified;
         }
 
-        public Paciente GetFichaById(int id)
+        public Paciente GetPacienteById(int id)
         {
             return _fichaContext.Pacientes.FirstOrDefault(x => x.idPaciente == id);
         }
 
-        public void DeleteFicha(Paciente paciente)
+        public void DeletePaciente(Paciente paciente)
         {
             _fichaContext.Pacientes.Remove(paciente);
         }

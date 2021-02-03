@@ -29,7 +29,7 @@ namespace FichaAtendimento.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<FichaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
-            services.AddScoped<IFichaDB, FichaDB>();
+            services.AddScoped<IAtendimentoDB, AtendimentoDB>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

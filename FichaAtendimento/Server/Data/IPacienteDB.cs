@@ -5,11 +5,11 @@ namespace FichaAtendimento.Server.Data
 {
     public interface IPacienteDB
     {
-        void AddNewFicha(Paciente paciente);
-        void DeleteFicha(Paciente paciente);
-        Paciente GetFichaById(int id);
-        IEnumerable<Paciente> GetFichas();
+        void AddNewPaciente(Paciente paciente);
+        void DeletePaciente(Paciente paciente);
+        Paciente GetPacienteById(int id);
+        IEnumerable<Paciente> GetPacientes();
         void SaveChanges();
-        void UpdateFicha(Paciente paciente);
+        void UpdatePaciente(Paciente paciente);
     }
 }
