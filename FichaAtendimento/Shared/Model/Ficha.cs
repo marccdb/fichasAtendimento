@@ -8,7 +8,7 @@ namespace FichaAtendimento.Shared.Model
     public class Ficha
     {
         [Key]
-        public int ID { get; set; }
+        public int idPaciente { get; set; }
 
         [Required]
         public string NomePaciente { get; set; }

@@ -6436,11 +6436,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Server\\FichaAtendimento.Server.csproj",
+      "projectUniqueName": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Server\\FichaAtendimento.Server.csproj",
       "projectName": "FichaAtendimento.Server",
-      "projectPath": "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Server\\FichaAtendimento.Server.csproj",
+      "projectPath": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Server\\FichaAtendimento.Server.csproj",
       "packagesPath": "C:\\Users\\marci\\.nuget\\packages\\",
-      "outputPath": "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Server\\obj\\",
+      "outputPath": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marci\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6458,11 +6458,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Client\\FichaAtendimento.Client.csproj": {
-              "projectPath": "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Client\\FichaAtendimento.Client.csproj"
+            "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Client\\FichaAtendimento.Client.csproj": {
+              "projectPath": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Client\\FichaAtendimento.Client.csproj"
             },
-            "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj": {
-              "projectPath": "E:\\Projetos\\Projetos Web\\FichaAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj"
+            "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj": {
+              "projectPath": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj"
             }
           }
         }

@@ -6,25 +6,25 @@ using System.Linq;
 
 namespace FichaAtendimento.Server.Data
 {
-    public class FichaDB : IFichaDB
+    public class PacienteDB : IPacienteDB
     {
         readonly FichaContext _fichaContext;
 
-        public FichaDB(FichaContext fichaContext)
+        public PacienteDB(FichaContext fichaContext)
         {
             _fichaContext = fichaContext;
         }
 
-        public void AddNewFicha(Ficha ficha)
+        public void AddNewFicha(Paciente paciente)
         {
-            _fichaContext.Fichas.Add(ficha);
+            _fichaContext.Pacientes.Add(paciente);
         }
 
-        public IEnumerable<Ficha> GetFichas()
+        public IEnumerable<Paciente> GetFichas()
         {
             try
             {
-                return _fichaContext.Fichas.ToList();
+                return _fichaContext.Pacientes.ToList();
             }
             catch (Exception)
             {
@@ -34,26 +34,24 @@ namespace FichaAtendimento.Server.Data
 
         }
 
-        public void UpdateFicha(Ficha ficha)
+        public void UpdateFicha(Paciente paciente)
         {
-            _fichaContext.Entry(ficha).State = EntityState.Modified;
+            _fichaContext.Entry(paciente).State = EntityState.Modified;
         }
 
-        public Ficha GetFichaById(int id)
+        public Paciente GetFichaById(int id)
         {
-            return _fichaContext.Fichas.FirstOrDefault(x => x.idPaciente == id);
+            return _fichaContext.Pacientes.FirstOrDefault(x => x.idPaciente == id);
         }
 
-        public void DeleteFicha(Ficha ficha)
+        public void DeleteFicha(Paciente paciente)
         {
-            _fichaContext.Fichas.Remove(ficha);
+            _fichaContext.Pacientes.Remove(paciente);
         }
 
         public void SaveChanges()
         {
             _fichaContext.SaveChanges();
         }
-
-
     }
 }

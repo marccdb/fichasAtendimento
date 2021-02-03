@@ -22,7 +22,16 @@ namespace FichaAtendimento.Server.Controllers
         [HttpGet]
         public IEnumerable<Ficha> GetAllFichas()
         {
-            return _fichaDB.GetFichas();
+            try
+            {
+                return _fichaDB.GetFichas();
+            }
+            catch (Exception)
+            {
+
+                throw new InvalidOperationException("Não foi possivel encontrar as fichas informadas.");
+            }
+            
         }
 
 
@@ -52,7 +61,7 @@ namespace FichaAtendimento.Server.Controllers
         [HttpPut("{id}")]
         public ActionResult<Ficha> UpdateFicha(int id, Ficha ficha)
         {
-            if (id != ficha.ID)
+            if (id != ficha.idPaciente)
             {
                 return BadRequest();
             }

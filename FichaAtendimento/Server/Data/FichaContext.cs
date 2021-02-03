@@ -12,6 +12,7 @@ namespace FichaAtendimento.Server.Data
 
         public DbSet<Ficha> Fichas { get; set; }
 
+        public DbSet<Paciente> Pacientes { get; set; }
 
     }
 }
