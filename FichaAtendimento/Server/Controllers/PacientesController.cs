@@ -28,7 +28,7 @@ namespace FichaAtendimento.Server.Controllers
             }
             catch (Exception)
             {
-                throw new InvalidOperationException("Não foi possivel encontrar as fichas informadas.");
+                throw new InvalidOperationException("Não foi possivel encontrar os pacientes informadas.");
             }
         }
 
