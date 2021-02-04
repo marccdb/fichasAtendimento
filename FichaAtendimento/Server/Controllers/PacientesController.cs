@@ -28,7 +28,7 @@ namespace FichaAtendimento.Server.Controllers
             }
             catch (Exception)
             {
-                throw new InvalidOperationException("Não foi possivel encontrar os pacientes informadas.");
+                throw new InvalidOperationException("Não foi possivel encontrar os pacientes informados.");
             }
         }
 
@@ -42,7 +42,7 @@ namespace FichaAtendimento.Server.Controllers
                 return returnedValue;
             }
             else
-                throw new InvalidOperationException("Não foi possivel encontrar o paciente informada.");
+                throw new InvalidOperationException("Não foi possivel encontrar o paciente informado.");
         }
 
 

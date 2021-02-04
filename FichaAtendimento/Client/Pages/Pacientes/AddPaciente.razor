@@ -1,0 +1,89 @@
+﻿@page "/Addpaciente"
+@using FichaAtendimento.Shared.Model
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Adicionar nova ficha</h3>
+<hr />
+
+<style>
+    .control-label {
+        margin-top: 10px;
+    }
+
+    .divSessaoPaga{
+        margin-top: 10px;
+    }
+
+    .divReciboEntregue{
+        margin-bottom: 10px;
+    }
+
+    .checkbox{
+        margin-left: 10px;
+    }
+
+</style>
+
+<EditForm Model="@newFicha" class="form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="NomePaciente" class="control-label">Paciente:</label>
+                <InputText form="NomePaciente" class="form-control" @bind-Value="@newFicha.NomePaciente"></InputText>
+                <label for="ResumoAtendimento" class="control-label">Resumo do Atendimento:</label>
+                <InputTextArea form="ResumoAtendimento" class="form-control" @bind-Value="@newFicha.ResumoAtendimento"></InputTextArea>
+                <label for="CondutaClínica" class="control-label">Conduta Clínica:</label>
+                <InputTextArea form="CondutaClínica" class="form-control" @bind-Value="@newFicha.CondutaClinica"></InputTextArea>
+                <label for="CID10/DSM" class="control-label">CID10/DSM:</label>
+                <InputText form="CID10/DSM" class="form-control" @bind-Value="@newFicha.CID10_DSM"></InputText>
+                <label for="ProxTarefa" class="control-label">Próxima Tarefa:</label>
+                <InputText form="ProxTarefa" class="form-control" @bind-Value="@newFicha.ProxTarefa"></InputText>
+                <label for="AbordagemProxSessao" class="control-label">Abordagem na Proxima Sessão:</label>
+                <InputTextArea form="AbordagemProxSessao" class="form-control" @bind-Value="@newFicha.AbordagemProxSessao"></InputTextArea>
+                <label for="DataAtendimento" class="control-label">Data do Atendimento:</label>
+                <InputDate class="form-control" @bind-Value="@newFicha.DataAtendimento" />
+
+                <div class="divSessaoPaga">
+                    <label for="SessaoPaga" class="control-label label-checkbox">Sessão Paga?</label>
+                    <InputCheckbox @bind-Value="@newFicha.SessaoPaga" class="checkbox"></InputCheckbox>
+                </div>
+                <div class="divReciboEntregue">
+                    <label for="ReciboEntregue" class="control-label label-checkbox">Recibo Entregue?</label>
+                    <InputCheckbox @bind-Value="@newFicha.ReciboEntregue" class="checkbox"></InputCheckbox>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <button class="btn btn-primary" @onclick="@CreateFicha" value="Save">Salvar Ficha</button>
+                <button class="btn btn-danger" @onclick="@Cancel" value="Cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+</EditForm>
+
+@code {
+
+    Ficha newFicha = new Ficha();
+
+
+
+    private async Task CreateFicha()
+    {
+        await Http.PostAsJsonAsync<Ficha>("api/Fichas", newFicha);
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("fichasatendimento");
+    }
+
+
+}

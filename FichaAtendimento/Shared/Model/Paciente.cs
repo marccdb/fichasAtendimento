@@ -46,8 +46,6 @@ namespace FichaAtendimento.Shared.Model
 
         public int IdadeMae { get; set; }
 
-        public string DadosRecibo { get; set; }
-
-
+        public string ReciboPara { get; set; }
     }
 }

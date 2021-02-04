@@ -1,0 +1,115 @@
+﻿@page "/Fichasatendimento"
+@using FichaAtendimento.Shared.Model
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<style>
+    .topMenu {
+        display: inline;
+        margin-right: 30px;
+        align-self: center;
+    }
+</style>
+
+
+
+<div style="display: inline-flex">
+    <h1 class="topMenu">Fichas de Atendimento</h1>
+    <button @onclick="@NovaFicha" class="btn btn-primary topMenu">NOVA FICHA</button>
+</div>
+
+@if (fichas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Resumo do Atendimento</th>
+                <th>Conduta Clínica</th>
+                <th>CID10/DSM</th>
+                <th>Próxima Tarefa</th>
+                <th>Proxima Abordagem</th>
+                <th>Data Atendimento</th>
+                <th>Sessão Paga?</th>
+                <th>Recibo Entregue?</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in fichas)
+            {
+                <tr>
+                    <td>@item.NomePaciente</td>
+                    <td>@item.ResumoAtendimento</td>
+                    <td>@item.CondutaClinica</td>
+                    <td>@item.CID10_DSM</td>
+                    <td>@item.ProxTarefa</td>
+                    <td>@item.AbordagemProxSessao</td>
+                    <td>@item.DataAtendimento.ToShortDateString()</td>
+                    <td>
+                        @if (item.SessaoPaga == true)
+                            sessaoPaga = "Sim";
+                        else
+                            sessaoPaga = "Não";
+                        @sessaoPaga
+                    </td>
+                    <td>
+                        @if (item.ReciboEntregue == true)
+                            reciboEntregue = "Sim";
+                        else
+                            reciboEntregue = "Não";
+                        @reciboEntregue
+                    </td>
+                    <td>
+                        <a class="nav-link" href="EditFicha/@item.idPaciente">
+                            <span class="oi oi-pencil" aria-hidden="true"></span> Editar
+                        </a>
+                        <a class="nav-link" href="RemoveFicha/@item.idPaciente">
+                            <span class="oi oi-trash" aria-hidden="true"></span> Remover
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Paciente[] pacientesArr;
+    private Ficha[] fichas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        pacientesArr = await Http.GetFromJsonAsync<Paciente[]>("api/Pacientes");
+        fichas = await Http.GetFromJsonAsync<Ficha[]>("api/Fichas");
+
+    }
+
+    private string sessaoPaga;
+    private string reciboEntregue;
+
+    private int local;
+    private IEnumerable<Ficha> FichaPorPaciente()
+    {
+        var returnedValue = fichas.Where(x => x.idPaciente == pacientesArr[local].idPaciente);
+        return returnedValue;
+
+    }
+
+    private void NovaFicha()
+    {
+        NavigationManager.NavigateTo("/addficha");
+    }
+
+    private void ShowFicha()
+    {
+
+    }
+
+
+}
