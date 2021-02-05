@@ -3,13 +3,26 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<div style="display: inline-flex">
-    <h1 style="display: inline; margin-right: 30px">Fichas de Atendimento</h1>
-    <button @onclick="@NovaFicha" style="display:inline; align-self: center" class="btn btn-primary">NOVA FICHA</button>
-</div>
-<br>
 
-@if (fichas == null)
+<style>
+    .topMenu {
+        display: inline;
+        margin-right: 30px;
+        align-self: center;
+    },
+    .table{
+
+    }
+
+</style>
+
+<div style="display: inline-flex">
+    <h1 class="topMenu">Pacientes</h1>
+    <button @onclick="@NewPaciente" class="btn btn-primary topMenu">NOVO PACIENTE</button>
+</div>
+
+
+@if (pacientes == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -19,71 +32,70 @@ else
         <thead>
             <tr>
                 <th>Paciente</th>
-                <th>Resumo do Atendimento</th>
-                <th>Conduta Clínica</th>
-                <th>CID10/DSM</th>
-                <th>Próxima Tarefa</th>
-                <th>Abordagem na Proxima Sessão</th>
-                <th>Data Atendimento</th>
-                <th>Sessão Paga?</th>
-                <th>Recibo Entregue?</th>
+                <th>Data Nascimento</th>
+                <th>Nacionalidade</th>
+                <th>Endereço</th>
+                <th>Profissão</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>RG</th>
+                <th>Escolaridade</th>
+                <th>Religiao</th>
+                <th>Nome do Pai</th>
+                <th>Idade Pai</th>
+                <th>Nome da Mãe</th>
+                <th>Idade Mãe</th>
+                <th>Recibo para</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in fichas)
+            @foreach (var paciente in pacientes)
             {
-                <tr>
-                    <td>@item.NomePaciente</td>
-                    <td>@item.ResumoAtendimento</td>
-                    <td>@item.CondutaClinica</td>
-                    <td>@item.CID10_DSM</td>
-                    <td>@item.ProxTarefa</td>
-                    <td>@item.AbordagemProxSessao</td>
-                    <td>@item.DataAtendimento.ToShortDateString()</td>
-                    <td>
-                        @if (item.SessaoPaga == true)
-                            sessaoPaga = "Sim";
-                        else
-                            sessaoPaga = "Não";
-                        @sessaoPaga
-                    </td>
-                    <td>
-                        @if (item.ReciboEntregue == true)
-                            reciboEntregue = "Sim";
-                        else
-                            reciboEntregue = "Não";
-                        @reciboEntregue
-                    </td>
-                    <td>
-                        <a class="nav-link" href="EditFicha/@item.idPaciente">
-                            <span class="oi oi-pencil" aria-hidden="true"></span> Editar
-                        </a>
-                        <a class="nav-link" href="RemoveFicha/@item.idPaciente">
-                            <span class="oi oi-trash" aria-hidden="true"></span> Remover
-                        </a>
+            <tr>
+                <td>@paciente.NomePaciente</td>
+                <td>@paciente.DataNascimento.ToShortDateString()</td>
+                <td>@paciente.Nacionalidade</td>
+                <td>@paciente.Endereco</td>
+                <td>@paciente.Profissao</td>
+                <td>@paciente.Telefone</td>
+                <td>@paciente.Email</td>
+                <td>@paciente.CPF</td>
+                <td>@paciente.RG</td>
+                <td>@paciente.Escolaridade</td>
+                <td>@paciente.Religiao</td>
+                <td>@paciente.NomePai</td>
+                <td>@paciente.IdadePai</td>
+                <td>@paciente.NomeMae</td>
+                <td>@paciente.IdadeMae</td>
+                <td>@paciente.ReciboPara</td>
+                <td>
+                    <a class="nav-link" href="EditPaciente/@paciente.idPaciente">
+                        <span class="oi oi-pencil" aria-hidden="true"></span> Editar
+                    </a>
+                    <a class="nav-link" href="RemovePaciente/@paciente.idPaciente">
+                        <span class="oi oi-trash" aria-hidden="true"></span> Remover
+                    </a>
 
-                    </td>
-                </tr>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
 }
 
 @code {
-    private Ficha[] fichas;
+    private Paciente[] pacientes;
 
     protected override async Task OnInitializedAsync()
     {
-        fichas = await Http.GetFromJsonAsync<Ficha[]>("api/Fichas");
+        pacientes = await Http.GetFromJsonAsync<Paciente[]>("api/Pacientes");
     }
 
-    private string sessaoPaga;
-    private string reciboEntregue;
-
-    private void NovaFicha()
+    private void NewPaciente()
     {
-        NavigationManager.NavigateTo("/addficha");
+        NavigationManager.NavigateTo("/addpaciente");
     }
 
 

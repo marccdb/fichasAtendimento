@@ -3,7 +3,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<h3>Adicionar nova ficha</h3>
+<h3>Adicionar novo paciente</h3>
 <hr />
 
 <style>
@@ -11,78 +11,91 @@
         margin-top: 10px;
     }
 
-    .divSessaoPaga{
+    .divSessaoPaga {
         margin-top: 10px;
     }
 
-    .divReciboEntregue{
+    .divReciboEntregue {
         margin-bottom: 10px;
     }
 
-    .checkbox{
+    .checkbox {
         margin-left: 10px;
     }
 
+    .coluna {
+    }
 </style>
 
-<EditForm Model="@newFicha" class="form">
-    <div class="row">
-        <div class="col-md-6">
+<EditForm Model="@newPaciente" class="form">
+    <div class="row coluna">
+        <div class="col-md-3">
             <div class="form-group">
                 <label for="NomePaciente" class="control-label">Paciente:</label>
-                <InputText form="NomePaciente" class="form-control" @bind-Value="@newFicha.NomePaciente"></InputText>
-                <label for="ResumoAtendimento" class="control-label">Resumo do Atendimento:</label>
-                <InputTextArea form="ResumoAtendimento" class="form-control" @bind-Value="@newFicha.ResumoAtendimento"></InputTextArea>
-                <label for="CondutaClínica" class="control-label">Conduta Clínica:</label>
-                <InputTextArea form="CondutaClínica" class="form-control" @bind-Value="@newFicha.CondutaClinica"></InputTextArea>
-                <label for="CID10/DSM" class="control-label">CID10/DSM:</label>
-                <InputText form="CID10/DSM" class="form-control" @bind-Value="@newFicha.CID10_DSM"></InputText>
-                <label for="ProxTarefa" class="control-label">Próxima Tarefa:</label>
-                <InputText form="ProxTarefa" class="form-control" @bind-Value="@newFicha.ProxTarefa"></InputText>
-                <label for="AbordagemProxSessao" class="control-label">Abordagem na Proxima Sessão:</label>
-                <InputTextArea form="AbordagemProxSessao" class="form-control" @bind-Value="@newFicha.AbordagemProxSessao"></InputTextArea>
-                <label for="DataAtendimento" class="control-label">Data do Atendimento:</label>
-                <InputDate class="form-control" @bind-Value="@newFicha.DataAtendimento" />
+                <InputText form="NomePaciente" class="form-control" @bind-Value="@newPaciente.NomePaciente"></InputText>
+                <label for="DataNascimento" class="control-label">Data de Nascimento:</label>
+                <InputDate class="form-control" @bind-Value="@newPaciente.DataNascimento" />
+                <label for="Nacionalidade" class="control-label">Nacionalidade:</label>
+                <InputText form="Nacionalidade" class="form-control" @bind-Value="@newPaciente.Nacionalidade"></InputText>
+                <label for="Endereco" class="control-label">Endereco:</label>
+                <InputText form="Endereco" class="form-control" @bind-Value="@newPaciente.Endereco"></InputText>
+                <label for="Profissao" class="control-label">Profissão:</label>
+                <InputText form="Profissao" class="form-control" @bind-Value="@newPaciente.Profissao"></InputText>
+                <label for="Telefone" class="control-label">Telefone:</label>
+                <InputText form="Telefone" class="form-control" @bind-Value="@newPaciente.Telefone"></InputText>
+                <label for="Email" class="control-label">Email:</label>
+                <InputText form="Email" class="form-control" @bind-Value="@newPaciente.Email"></InputText>
+                <label for="CPF" class="control-label">CPF:</label>
+                <InputText form="CPF" class="form-control" @bind-Value="@newPaciente.CPF"></InputText>
+            </div>
+        </div>
 
-                <div class="divSessaoPaga">
-                    <label for="SessaoPaga" class="control-label label-checkbox">Sessão Paga?</label>
-                    <InputCheckbox @bind-Value="@newFicha.SessaoPaga" class="checkbox"></InputCheckbox>
-                </div>
-                <div class="divReciboEntregue">
-                    <label for="ReciboEntregue" class="control-label label-checkbox">Recibo Entregue?</label>
-                    <InputCheckbox @bind-Value="@newFicha.ReciboEntregue" class="checkbox"></InputCheckbox>
-                </div>
-
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="RG" class="control-label">RG:</label>
+                <InputText form="RG" class="form-control" @bind-Value="@newPaciente.RG"></InputText>
+                <label for="Escolaridade" class="control-label">Escolaridade:</label>
+                <InputText form="Escolaridade" class="form-control" @bind-Value="@newPaciente.Escolaridade"></InputText>
+                <label for="Religiao" class="control-label">Religião:</label>
+                <InputText form="Religiao" class="form-control" @bind-Value="@newPaciente.Religiao"></InputText>
+                <label for="NomePai" class="control-label">Nome do Pai:</label>
+                <InputText form="NomePai" class="form-control" @bind-Value="@newPaciente.NomePai"></InputText>
+                <label for="IdadePai" class="control-label">Idade do Pai:</label>
+                <InputNumber form="IdadePai" class="form-control" @bind-Value="@newPaciente.IdadePai"></InputNumber>
+                <label for="NomeMae" class="control-label">Nome da Mae:</label>
+                <InputText form="NomeMae" class="form-control" @bind-Value="@newPaciente.NomeMae"></InputText>
+                <label for="IdadeMae" class="control-label">Idade da Mae:</label>
+                <InputNumber form="IdadeMae" class="form-control" @bind-Value="@newPaciente.IdadeMae"></InputNumber>
+                <label for="ReciboPara" class="control-label">Recibo Para:</label>
+                <InputText form="ReciboPara" class="form-control" @bind-Value="@newPaciente.ReciboPara"></InputText>
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <button class="btn btn-primary" @onclick="@CreateFicha" value="Save">Salvar Ficha</button>
+                <button class="btn btn-primary" @onclick="@CreatePaciente" value="Save">Salvar</button>
                 <button class="btn btn-danger" @onclick="@Cancel" value="Cancel">Cancelar</button>
             </div>
         </div>
     </div>
-
 </EditForm>
 
 @code {
 
-    Ficha newFicha = new Ficha();
+    Paciente newPaciente = new Paciente();
 
 
 
-    private async Task CreateFicha()
+    private async Task CreatePaciente()
     {
-        await Http.PostAsJsonAsync<Ficha>("api/Fichas", newFicha);
-        NavigationManager.NavigateTo("fichasatendimento");
+        await Http.PostAsJsonAsync<Paciente>("api/Pacientes", newPaciente);
+        NavigationManager.NavigateTo("Pacientes");
     }
 
     private void Cancel()
     {
-        NavigationManager.NavigateTo("fichasatendimento");
+        NavigationManager.NavigateTo("Pacientes");
     }
 
 

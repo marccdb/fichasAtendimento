@@ -12,15 +12,15 @@
     }
 </style>
 
-<h3>Remover ficha</h3>
+<h3>Remover paciente</h3>
 <hr />
 
 <div class="row">
-    <h4>Tem certeza que deseja remover esta ficha?</h4>
+    <h4>Tem certeza que deseja remover este paciente?</h4>
 </div>
 <div class="row divBotoes">
     <button @onclick="@Cancel" class="botao btn btn-secondary" value="Cancel">VOLTAR</button>
-    <button @onclick="@DeleteFicha" class="botao btn btn-danger" value="Delete">REMOVER</button>
+    <button @onclick="@DeletePaciente" class="botao btn btn-danger" value="Delete">REMOVER</button>
 </div>
 
 
@@ -29,23 +29,23 @@
 
     [Parameter]
     public string id { get; set; }
-    Ficha newFicha = new Ficha();
+    Paciente newPaciente = new Paciente();
 
     protected override async Task OnInitializedAsync()
     {
-        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
+        newPaciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{id}");
     }
 
 
-    private async Task DeleteFicha()
+    private async Task DeletePaciente()
     {
-        await Http.DeleteAsync($"api/Fichas/{id}");
-        NavigationManager.NavigateTo("fichasatendimento");
+        await Http.DeleteAsync($"api/Pacientes/{id}");
+        NavigationManager.NavigateTo("Pacientes");
     }
 
     private void Cancel()
     {
-        NavigationManager.NavigateTo("fichasatendimento");
+        NavigationManager.NavigateTo("Pacientes");
     }
 
 
