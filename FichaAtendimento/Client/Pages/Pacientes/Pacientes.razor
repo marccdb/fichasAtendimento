@@ -9,11 +9,10 @@
         display: inline;
         margin-right: 30px;
         align-self: center;
-    },
-    .table{
-
     }
 
+    .table {
+    }
 </style>
 
 <div style="display: inline-flex">
@@ -24,7 +23,7 @@
 
 @if (pacientes == null)
 {
-    <p><em>Loading...</em></p>
+    <div class="spinner"></div>
 }
 else
 {
@@ -53,33 +52,33 @@ else
         <tbody>
             @foreach (var paciente in pacientes)
             {
-            <tr>
-                <td>@paciente.NomePaciente</td>
-                <td>@paciente.DataNascimento.ToShortDateString()</td>
-                <td>@paciente.Nacionalidade</td>
-                <td>@paciente.Endereco</td>
-                <td>@paciente.Profissao</td>
-                <td>@paciente.Telefone</td>
-                <td>@paciente.Email</td>
-                <td>@paciente.CPF</td>
-                <td>@paciente.RG</td>
-                <td>@paciente.Escolaridade</td>
-                <td>@paciente.Religiao</td>
-                <td>@paciente.NomePai</td>
-                <td>@paciente.IdadePai</td>
-                <td>@paciente.NomeMae</td>
-                <td>@paciente.IdadeMae</td>
-                <td>@paciente.ReciboPara</td>
-                <td>
-                    <a class="nav-link" href="EditPaciente/@paciente.idPaciente">
-                        <span class="oi oi-pencil" aria-hidden="true"></span> Editar
-                    </a>
-                    <a class="nav-link" href="RemovePaciente/@paciente.idPaciente">
-                        <span class="oi oi-trash" aria-hidden="true"></span> Remover
-                    </a>
+                <tr>
+                    <td>@paciente.NomePaciente</td>
+                    <td>@paciente.DataNascimento.ToShortDateString()</td>
+                    <td>@paciente.Nacionalidade</td>
+                    <td>@paciente.Endereco</td>
+                    <td>@paciente.Profissao</td>
+                    <td>@paciente.Telefone</td>
+                    <td>@paciente.Email</td>
+                    <td>@paciente.CPF</td>
+                    <td>@paciente.RG</td>
+                    <td>@paciente.Escolaridade</td>
+                    <td>@paciente.Religiao</td>
+                    <td>@paciente.NomePai</td>
+                    <td>@paciente.IdadePai</td>
+                    <td>@paciente.NomeMae</td>
+                    <td>@paciente.IdadeMae</td>
+                    <td>@paciente.ReciboPara</td>
+                    <td>
+                        <a class="nav-link" href="EditPaciente/@paciente.idPaciente">
+                            <span class="oi oi-pencil" aria-hidden="true"></span> Editar
+                        </a>
+                        <a class="nav-link" href="RemovePaciente/@paciente.idPaciente">
+                            <span class="oi oi-trash" aria-hidden="true"></span> Remover
+                        </a>
 
-                </td>
-            </tr>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

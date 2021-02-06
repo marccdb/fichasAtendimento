@@ -10,8 +10,7 @@
         align-self: center;
     }
 
-    .table{
-
+    .table {
     }
 </style>
 
@@ -24,7 +23,7 @@
 
 @if (fichas == null)
 {
-    <p><em>Loading...</em></p>
+    <div class="spinner"></div>
 }
 else
 {
@@ -44,35 +43,35 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in fichas)
+            @foreach (var ficha in fichas)
             {
                 <tr>
-                    <td>@item.NomePaciente</td>
-                    <td>@item.ResumoAtendimento</td>
-                    <td>@item.CondutaClinica</td>
-                    <td>@item.CID10_DSM</td>
-                    <td>@item.ProxTarefa</td>
-                    <td>@item.AbordagemProxSessao</td>
-                    <td>@item.DataAtendimento.ToShortDateString()</td>
+                    <td>@ficha.NomePaciente</td>
+                    <td>@ficha.ResumoAtendimento</td>
+                    <td>@ficha.CondutaClinica</td>
+                    <td>@ficha.CID10_DSM</td>
+                    <td>@ficha.ProxTarefa</td>
+                    <td>@ficha.AbordagemProxSessao</td>
+                    <td>@ficha.DataAtendimento.ToShortDateString()</td>
                     <td>
-                        @if (item.SessaoPaga == true)
+                        @if (ficha.SessaoPaga == true)
                             sessaoPaga = "Sim";
                         else
                             sessaoPaga = "Não";
                         @sessaoPaga
                     </td>
                     <td>
-                        @if (item.ReciboEntregue == true)
+                        @if (ficha.ReciboEntregue == true)
                             reciboEntregue = "Sim";
                         else
                             reciboEntregue = "Não";
                         @reciboEntregue
                     </td>
                     <td>
-                        <a class="nav-link" href="EditFicha/@item.idPaciente">
+                        <a class="nav-link" href="EditFicha/@ficha.idPaciente">
                             <span class="oi oi-pencil" aria-hidden="true"></span> Editar
                         </a>
-                        <a class="nav-link" href="RemoveFicha/@item.idPaciente">
+                        <a class="nav-link" href="RemoveFicha/@ficha.idPaciente">
                             <span class="oi oi-trash" aria-hidden="true"></span> Remover
                         </a>
 

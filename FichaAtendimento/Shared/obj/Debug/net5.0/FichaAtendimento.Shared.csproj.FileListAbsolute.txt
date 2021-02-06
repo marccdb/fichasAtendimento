@@ -9,3 +9,4 @@ E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Shared\obj\Debug\net5.
 E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Shared\obj\Debug\net5.0\FichaAtendimento.Shared.dll
 E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Shared\obj\Debug\net5.0\ref\FichaAtendimento.Shared.dll
 E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Shared\obj\Debug\net5.0\FichaAtendimento.Shared.pdb
+E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Shared\obj\Debug\net5.0\FichaAtendimento.Shared.csprojAssemblyReference.cache

@@ -14,7 +14,11 @@ namespace FichaAtendimento.Shared.Model
 
         [Required]
         [Column(TypeName = "date")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime DataNascimento
+        {
+            get { return DateTime.Now; }
+            set { }
+        }
 
         public string Nacionalidade { get; set; }
 
