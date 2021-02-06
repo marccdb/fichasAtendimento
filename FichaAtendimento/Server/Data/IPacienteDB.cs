@@ -1,5 +1,6 @@
 ﻿using FichaAtendimento.Shared.Model;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FichaAtendimento.Server.Data
 {
@@ -7,8 +8,8 @@ namespace FichaAtendimento.Server.Data
     {
         void AddNewPaciente(Paciente paciente);
         void DeletePaciente(Paciente paciente);
-        Paciente GetPacienteById(int id);
-        IEnumerable<Paciente> GetPacientes();
+        Task<Paciente> GetPacienteById(int id);
+        Task<IEnumerable<Paciente>> GetPacientes();
         void SaveChanges();
         void UpdatePaciente(Paciente paciente);
     }
