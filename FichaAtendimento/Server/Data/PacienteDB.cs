@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FichaAtendimento.Server.Data
 {
@@ -20,11 +21,11 @@ namespace FichaAtendimento.Server.Data
             _fichaContext.Pacientes.Add(paciente);
         }
 
-        public IEnumerable<Paciente> GetPacientes()
+        public async Task<IEnumerable<Paciente>> GetPacientes()
         {
             try
             {
-                return _fichaContext.Pacientes.ToList();
+                return await _fichaContext.Pacientes.ToListAsync();
             }
             catch (Exception)
             {
@@ -38,9 +39,9 @@ namespace FichaAtendimento.Server.Data
             _fichaContext.Entry(paciente).State = EntityState.Modified;
         }
 
-        public Paciente GetPacienteById(int id)
+        public async Task<Paciente> GetPacienteById(int id)
         {
-            return _fichaContext.Pacientes.FirstOrDefault(x => x.idPaciente == id);
+            return await _fichaContext.Pacientes.FirstOrDefaultAsync(x => x.idPaciente == id);
         }
 
         public void DeletePaciente(Paciente paciente)

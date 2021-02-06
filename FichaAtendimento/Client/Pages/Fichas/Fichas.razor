@@ -10,7 +10,8 @@
         align-self: center;
     }
 
-    .table {
+    .infoMsg{
+        margin-top: 30px;
     }
 </style>
 
@@ -23,7 +24,9 @@
 
 @if (fichas == null)
 {
-    <div class="spinner"></div>
+    <div class="infoMsg">
+        <h3>Não há fichas para serem exibidas.</h3>
+    </div>
 }
 else
 {

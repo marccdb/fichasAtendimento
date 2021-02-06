@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using FichaAtendimento.Server.Data;
+using System.Threading.Tasks;
 
 namespace FichaAtendimento.Server.Controllers
 {
@@ -20,11 +21,11 @@ namespace FichaAtendimento.Server.Controllers
 
 
         [HttpGet]
-        public IEnumerable<Ficha> GetAllFichas()
+        public async Task<IEnumerable<Ficha>> GetAllFichas()
         {
             try
             {
-                return _fichaDB.GetFichas();
+                return await _fichaDB.GetFichas();
             }
             catch (Exception)
             {
@@ -36,12 +37,12 @@ namespace FichaAtendimento.Server.Controllers
 
 
         [HttpGet("{id}")]
-        public Ficha GetFicha(int id)
+        public async Task<Ficha> GetFicha(int id)
         {
             var returnedValue = _fichaDB.GetFichaById(id);
             if (returnedValue != null)
             {
-                return returnedValue;
+                return await returnedValue;
             }
             else
                 throw new InvalidOperationException("Não foi possivel encontrar a ficha informada.");
@@ -75,11 +76,11 @@ namespace FichaAtendimento.Server.Controllers
 
 
         [HttpDelete("{id}")]
-        public void RemoveFicha(int id)
+        public async Task RemoveFicha(int id)
         {
             try
             {
-                var returnedValue = _fichaDB.GetFichaById(id);
+                var returnedValue = await _fichaDB.GetFichaById(id);
                 if (returnedValue != null)
                 {
                     _fichaDB.DeleteFicha(returnedValue);

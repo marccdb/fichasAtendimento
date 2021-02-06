@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\marci\\.nuget\\packages\\": {}
+    "C:\\Users\\marcio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj",
+      "projectUniqueName": "D:\\Projetos\\DotNet\\fichasAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj",
       "projectName": "FichaAtendimento.Shared",
-      "projectPath": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj",
-      "packagesPath": "C:\\Users\\marci\\.nuget\\packages\\",
-      "outputPath": "E:\\Projetos\\ProjetosWeb\\FichaAtendimento\\FichaAtendimento\\Shared\\obj\\",
+      "projectPath": "D:\\Projetos\\DotNet\\fichasAtendimento\\FichaAtendimento\\Shared\\FichaAtendimento.Shared.csproj",
+      "packagesPath": "C:\\Users\\marcio\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\DotNet\\fichasAtendimento\\FichaAtendimento\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\marci\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marcio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,8 +28,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://packages.stride3d.net/nuget": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {

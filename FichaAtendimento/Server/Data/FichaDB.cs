@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FichaAtendimento.Server.Data
 {
@@ -20,11 +21,11 @@ namespace FichaAtendimento.Server.Data
             _fichaContext.Fichas.Add(ficha);
         }
 
-        public IEnumerable<Ficha> GetFichas()
+        public async Task<IEnumerable<Ficha>> GetFichas()
         {
             try
             {
-                return _fichaContext.Fichas.ToList();
+                return await _fichaContext.Fichas.ToListAsync();
             }
             catch (Exception)
             {
@@ -39,9 +40,9 @@ namespace FichaAtendimento.Server.Data
             _fichaContext.Entry(ficha).State = EntityState.Modified;
         }
 
-        public Ficha GetFichaById(int id)
+        public async Task<Ficha> GetFichaById(int id)
         {
-            return _fichaContext.Fichas.FirstOrDefault(x => x.idPaciente == id);
+            return await _fichaContext.Fichas.FirstOrDefaultAsync(x => x.idPaciente == id);
         }
 
         public void DeleteFicha(Ficha ficha)

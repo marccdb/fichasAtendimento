@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using FichaAtendimento.Server.Data;
+using System.Threading.Tasks;
 
 namespace FichaAtendimento.Server.Controllers
 {
@@ -20,11 +21,11 @@ namespace FichaAtendimento.Server.Controllers
 
 
         [HttpGet]
-        public IEnumerable<Paciente> GetAllPacientes()
+        public async Task<IEnumerable<Paciente>> GetAllPacientes()
         {
             try
             {
-                return _pacienteDB.GetPacientes();
+                return await _pacienteDB.GetPacientes();
             }
             catch (Exception)
             {
@@ -34,12 +35,12 @@ namespace FichaAtendimento.Server.Controllers
 
 
         [HttpGet("{id}")]
-        public Paciente GetPaciente(int id)
+        public async Task<Paciente> GetPaciente(int id)
         {
             var returnedValue = _pacienteDB.GetPacienteById(id);
             if (returnedValue != null)
             {
-                return returnedValue;
+                return await returnedValue;
             }
             else
                 throw new InvalidOperationException("Não foi possivel encontrar o paciente informado.");
@@ -71,11 +72,11 @@ namespace FichaAtendimento.Server.Controllers
 
 
         [HttpDelete("{id}")]
-        public void RemovePaciente(int id)
+        public async Task RemovePaciente(int id)
         {
             try
             {
-                var returnedValue = _pacienteDB.GetPacienteById(id);
+                var returnedValue = await _pacienteDB.GetPacienteById(id);
                 if (returnedValue != null)
                 {
                     _pacienteDB.DeletePaciente(returnedValue);
