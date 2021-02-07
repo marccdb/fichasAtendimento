@@ -10,8 +10,11 @@
         align-self: center;
     }
 
-    .infoMsg{
+    .infoMsg {
         margin-top: 30px;
+    }
+    .dropdown {
+        margin-bottom: 10px;
     }
 </style>
 
@@ -20,9 +23,10 @@
 <div style="display: inline-flex">
     <h1 class="topMenu">Fichas de Atendimento</h1>
     <button @onclick="@NovaFicha" class="btn btn-primary topMenu">NOVA FICHA</button>
+
 </div>
 
-@if (fichas == null)
+@if (fichas == null || pacientesArr == null)
 {
     <div class="infoMsg">
         <h3>Não há fichas para serem exibidas.</h3>
@@ -30,6 +34,18 @@
 }
 else
 {
+
+    <div class="dropdown">
+        <select name="selecPaciente">
+            <option selected>#Filtrar por paciente</option>
+            @foreach (var paciente in pacientesArr)
+            {
+                <option value="@paciente.idPaciente">@paciente.NomePaciente</option>
+            }
+        </select>
+    </div>
+
+
     <table class="table">
         <thead>
             <tr>
@@ -87,6 +103,7 @@ else
 
 @code {
     private Paciente[] pacientesArr;
+
     private Ficha[] fichas;
 
     protected override async Task OnInitializedAsync()
@@ -104,18 +121,10 @@ else
     {
         var returnedValue = fichas.Where(x => x.idPaciente == pacientesArr[local].idPaciente);
         return returnedValue;
-
     }
 
     private void NovaFicha()
     {
         NavigationManager.NavigateTo("/addficha");
     }
-
-    private void ShowFicha()
-    {
-
-    }
-
-
 }
