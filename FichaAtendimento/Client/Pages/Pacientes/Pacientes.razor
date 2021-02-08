@@ -14,6 +14,7 @@
     .infoMsg {
         margin-top: 30px;
     }
+
     .dropdown {
         margin-bottom: 10px;
     }
@@ -33,16 +34,6 @@
 }
 else
 {
-    <div class="dropdown">
-        <select name="selecPaciente">
-            <option selected>#Filtrar por paciente</option>
-            @foreach (var paciente in pacientesArr)
-            {
-                <option value="@paciente.idPaciente">@paciente.NomePaciente</option>
-            }
-        </select>
-    </div>
-
     <table class="table">
         <thead>
             <tr>
@@ -98,20 +89,4 @@ else
             }
         </tbody>
     </table>
-}
-
-@code {
-    private Paciente[] pacientesArr;
-
-    protected override async Task OnInitializedAsync()
-    {
-        pacientesArr = await Http.GetFromJsonAsync<Paciente[]>("api/Pacientes");
-    }
-
-    private void NewPaciente()
-    {
-        NavigationManager.NavigateTo("/addpaciente");
-    }
-
-
 }

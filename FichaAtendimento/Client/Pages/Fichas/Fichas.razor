@@ -36,8 +36,7 @@ else
 {
 
     <div class="dropdown">
-        <select name="selecPaciente">
-            <option selected>#Filtrar por paciente</option>
+        <select @bind="@pacienteId" name="selecPaciente">
             @foreach (var paciente in pacientesArr)
             {
                 <option value="@paciente.idPaciente">@paciente.NomePaciente</option>
@@ -62,7 +61,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var ficha in fichas)
+            @foreach (var ficha in FichaPorPaciente().OrderBy(x => x.DataAtendimento))
             {
                 <tr>
                     <td>@ficha.NomePaciente</td>
@@ -87,10 +86,10 @@ else
                         @reciboEntregue
                     </td>
                     <td>
-                        <a class="nav-link" href="EditFicha/@ficha.idPaciente">
+                        <a class="nav-link" href="EditFicha/@ficha.idFicha">
                             <span class="oi oi-pencil" aria-hidden="true"></span> Editar
                         </a>
-                        <a class="nav-link" href="RemoveFicha/@ficha.idPaciente">
+                        <a class="nav-link" href="RemoveFicha/@ficha.idFicha">
                             <span class="oi oi-trash" aria-hidden="true"></span> Remover
                         </a>
 
@@ -99,32 +98,4 @@ else
             }
         </tbody>
     </table>
-}
-
-@code {
-    private Paciente[] pacientesArr;
-
-    private Ficha[] fichas;
-
-    protected override async Task OnInitializedAsync()
-    {
-        pacientesArr = await Http.GetFromJsonAsync<Paciente[]>("api/Pacientes");
-        fichas = await Http.GetFromJsonAsync<Ficha[]>("api/Fichas");
-
-    }
-
-    private string sessaoPaga;
-    private string reciboEntregue;
-
-    private int local;
-    private IEnumerable<Ficha> FichaPorPaciente()
-    {
-        var returnedValue = fichas.Where(x => x.idPaciente == pacientesArr[local].idPaciente);
-        return returnedValue;
-    }
-
-    private void NovaFicha()
-    {
-        NavigationManager.NavigateTo("/addficha");
-    }
 }

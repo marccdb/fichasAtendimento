@@ -8,6 +8,9 @@ namespace FichaAtendimento.Shared.Model
     public class Ficha
     {
         [Key]
+        public int idFicha { get; set; }
+
+        [Required]
         public int idPaciente { get; set; }
 
         [Required]
@@ -28,8 +31,7 @@ namespace FichaAtendimento.Shared.Model
         [Column(TypeName = "date")]
         public DateTime DataAtendimento
         {
-            get { return DateTime.Now; }
-            set { }
+            get; set;
         }
 
         public string AbordagemProxSessao { get; set; }

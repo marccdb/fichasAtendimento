@@ -62,7 +62,7 @@ namespace FichaAtendimento.Server.Controllers
         [HttpPut("{id}")]
         public ActionResult<Ficha> UpdateFicha(int id, Ficha ficha)
         {
-            if (id != ficha.idPaciente)
+            if (id != ficha.idFicha)
             {
                 return BadRequest();
             }

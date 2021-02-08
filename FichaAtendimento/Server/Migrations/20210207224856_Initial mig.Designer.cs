@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FichaAtendimento.Server.Migrations
 {
     [DbContext(typeof(FichaContext))]
-    [Migration("20210203130005_Troca propriedade Recibo")]
-    partial class TrocapropriedadeRecibo
+    [Migration("20210207224856_Initial mig")]
+    partial class Initialmig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace FichaAtendimento.Server.Migrations
 
             modelBuilder.Entity("FichaAtendimento.Shared.Model.Ficha", b =>
                 {
-                    b.Property<int>("idPaciente")
+                    b.Property<int>("idFicha")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -56,7 +56,10 @@ namespace FichaAtendimento.Server.Migrations
                     b.Property<bool>("SessaoPaga")
                         .HasColumnType("bit");
 
-                    b.HasKey("idPaciente");
+                    b.Property<int>("idPaciente")
+                        .HasColumnType("int");
+
+                    b.HasKey("idFicha");
 
                     b.ToTable("Fichas");
                 });

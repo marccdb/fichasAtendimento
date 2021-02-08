@@ -1,11 +1,11 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-+WarPhPCewdI\/6tA\/0gr1DwGOtu\/JUNG8luGWPBssxw=",
+      "hash": "sha256-h2LnpnbWVkAXH8FTX4IkVe84We2ZyMEQB9eEt1Kn7Cc=",
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs=",
+      "hash": "sha256-T\/zFmO5s\/0aSwc6ics2KLxlfbewyRz6UNw1s3Ppf5gE=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
@@ -61,7 +61,7 @@
       "url": "img\/simboloPsico.png"
     },
     {
-      "hash": "sha256-eQ1ENaL5oGKoK7b\/jr0iok9gXgo+06Hj2FZy\/xBfLCU=",
+      "hash": "sha256-EgIc5LkkxfCT82v3tJipz1NpKaINb479U622QwjbUfA=",
       "url": "index.html"
     },
     {
@@ -109,7 +109,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-y8FFtBAxGZbkEFq5FZpsnnXWZAfoj7WsMFdsbUZvILM=",
+      "hash": "sha256-mnU4l0MjVW+jlK2UdaI+78Q6QqtLcAeMc9qIQpGJ8vE=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
@@ -165,11 +165,11 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-ISbRr1VbG0Dr6NATt1ZHFiMr1K0HB8Hw58W9Gi41JtI=",
+      "hash": "sha256-SDoAAoe29nzB9Y4WT0MO9I1unMmEZQOtV+Nkyd72qhY=",
       "url": "_framework\/FichaAtendimento.Shared.dll"
     },
     {
-      "hash": "sha256-Ay5VEn3ZUcWm2NVrN4cg1SqxrlgUgg8AgL4KnYpdnLI=",
+      "hash": "sha256-KdXWpEFLQiPUVcDo+T+gt9wIHsbFBVLYgzDuFJWYB5U=",
       "url": "_framework\/FichaAtendimento.Client.dll"
     },
     {
@@ -217,7 +217,7 @@
       "url": "_framework\/System.Linq.Expressions.dll"
     },
     {
-      "hash": "sha256-P1wS+7NGetTowL9UfAmoaYrvWdj\/i8J+t0ZLn6rP0\/U=",
+      "hash": "sha256-rBNVmwMDD\/bCwLgnMSKtzV6lw5powuX\/itE7JngTlV0=",
       "url": "_framework\/System.Linq.dll"
     },
     {
@@ -269,7 +269,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-zIei5FMnMApCF10KjS47Z1Y3CfaAnV2qIu+vs0WB120=",
+      "hash": "sha256-5w6RDXNCf2tIXGPL8at0GOocSGLe1pgWrY7EIMvM+RE=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -277,5 +277,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "vnBCKVD2"
+  "version": "kIhW9iXD"
 };

@@ -4,6 +4,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Server\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Server\bin\Release\net5.0\publish\</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

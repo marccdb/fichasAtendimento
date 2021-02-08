@@ -66,29 +66,3 @@
     </div>
 
 </EditForm>
-
-@code {
-
-    [Parameter]
-    public string id { get; set; }
-    Ficha newFicha = new Ficha();
-
-    protected override async Task OnInitializedAsync()
-    {
-        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
-    }
-
-
-    private async Task UpdateFicha()
-    {
-        await Http.PutAsJsonAsync<Ficha>($"api/Fichas/{id}", newFicha);
-        NavigationManager.NavigateTo("fichasatendimento");
-    }
-
-    private void Cancel()
-    {
-        NavigationManager.NavigateTo("fichasatendimento");
-    }
-
-
-}

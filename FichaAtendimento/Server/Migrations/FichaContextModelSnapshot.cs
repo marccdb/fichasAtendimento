@@ -21,7 +21,7 @@ namespace FichaAtendimento.Server.Migrations
 
             modelBuilder.Entity("FichaAtendimento.Shared.Model.Ficha", b =>
                 {
-                    b.Property<int>("idPaciente")
+                    b.Property<int>("idFicha")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -54,7 +54,10 @@ namespace FichaAtendimento.Server.Migrations
                     b.Property<bool>("SessaoPaga")
                         .HasColumnType("bit");
 
-                    b.HasKey("idPaciente");
+                    b.Property<int>("idPaciente")
+                        .HasColumnType("int");
+
+                    b.HasKey("idFicha");
 
                     b.ToTable("Fichas");
                 });

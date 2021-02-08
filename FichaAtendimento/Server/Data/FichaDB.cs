@@ -42,7 +42,7 @@ namespace FichaAtendimento.Server.Data
 
         public async Task<Ficha> GetFichaById(int id)
         {
-            return await _fichaContext.Fichas.FirstOrDefaultAsync(x => x.idPaciente == id);
+            return await _fichaContext.Fichas.FirstOrDefaultAsync(x => x.idFicha == id);
         }
 
         public void DeleteFicha(Ficha ficha)

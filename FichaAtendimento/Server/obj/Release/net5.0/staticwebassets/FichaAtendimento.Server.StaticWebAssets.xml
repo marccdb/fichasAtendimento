@@ -1,5 +1,5 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\bin\Release\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\obj\Release\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="/" Path="E:\Projetos\Projetos Web\FichaAtendimento\FichaAtendimento\Client\wwwroot\" />
+  <ContentRoot BasePath="/" Path="E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Client\bin\Release\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Client\obj\Release\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Client\wwwroot\" />
 </StaticWebAssets>

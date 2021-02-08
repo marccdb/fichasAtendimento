@@ -22,31 +22,3 @@
     <button @onclick="@Cancel" class="botao btn btn-secondary" value="Cancel">VOLTAR</button>
     <button @onclick="@DeleteFicha" class="botao btn btn-danger" value="Delete">REMOVER</button>
 </div>
-
-
-
-@code {
-
-    [Parameter]
-    public string id { get; set; }
-    Ficha newFicha = new Ficha();
-
-    protected override async Task OnInitializedAsync()
-    {
-        newFicha = await Http.GetFromJsonAsync<Ficha>($"api/Fichas/{id}");
-    }
-
-
-    private async Task DeleteFicha()
-    {
-        await Http.DeleteAsync($"api/Fichas/{id}");
-        NavigationManager.NavigateTo("fichasatendimento");
-    }
-
-    private void Cancel()
-    {
-        NavigationManager.NavigateTo("fichasatendimento");
-    }
-
-
-}

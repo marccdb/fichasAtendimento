@@ -80,23 +80,3 @@
         </div>
     </div>
 </EditForm>
-
-@code {
-
-    Paciente newPaciente = new Paciente();
-
-
-
-    private async Task CreatePaciente()
-    {
-        await Http.PostAsJsonAsync<Paciente>("api/Pacientes", newPaciente);
-        NavigationManager.NavigateTo("Pacientes");
-    }
-
-    private void Cancel()
-    {
-        NavigationManager.NavigateTo("Pacientes");
-    }
-
-
-}

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FichaAtendimento.Server.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Initialmig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,9 @@ namespace FichaAtendimento.Server.Migrations
                 name: "Fichas",
                 columns: table => new
                 {
-                    idPaciente = table.Column<int>(type: "int", nullable: false)
+                    idFicha = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    idPaciente = table.Column<int>(type: "int", nullable: false),
                     NomePaciente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ResumoAtendimento = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SessaoPaga = table.Column<bool>(type: "bit", nullable: false),
@@ -25,7 +26,7 @@ namespace FichaAtendimento.Server.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Fichas", x => x.idPaciente);
+                    table.PrimaryKey("PK_Fichas", x => x.idFicha);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,7 +50,7 @@ namespace FichaAtendimento.Server.Migrations
                     IdadePai = table.Column<int>(type: "int", nullable: false),
                     NomeMae = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IdadeMae = table.Column<int>(type: "int", nullable: false),
-                    DadosRecibo = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ReciboPara = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
