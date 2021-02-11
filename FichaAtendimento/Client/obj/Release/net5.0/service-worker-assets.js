@@ -1645,8 +1645,12 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-yTQZPX9Yi1Z3+AxYamrs06zNd0o271rEALf4B3ejqto=",
+      "hash": "sha256-5jVJ2MRzOv0JSHuMYmkbK8zoHcUh6yLPiSDTwomC26g=",
       "url": "img\/simboloPsico.png"
+    },
+    {
+      "hash": "sha256-ZQvzQy29JKQNndmgTJgDB9AZA9\/ouKnnsKueWko8\/WE=",
+      "url": "img\/simbolopsico_I7a_icon.ico"
     },
     {
       "hash": "sha256-EgIc5LkkxfCT82v3tJipz1NpKaINb479U622QwjbUfA=",
@@ -1665,5 +1669,5 @@
       "url": "FichaAtendimento.Client.bundle.scp.css"
     }
   ],
-  "version": "AlLtqx1B"
+  "version": "ruKgKKU8"
 };

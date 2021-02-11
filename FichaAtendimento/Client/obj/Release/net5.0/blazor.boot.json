@@ -200,6 +200,7 @@
     },
     "lazyAssembly": null,
     "pdb": {
+      "FichaAtendimento.Shared.pdb": "sha256-hPHPDUrbXB51OanIwXycYMCinydpOct8MjM4+CTg+FA=",
       "FichaAtendimento.Client.pdb": "sha256-o8ij5KNxpCkz9webGKnqo77B98dnQKt5+wNBxhg4xU0="
     },
     "runtime": {

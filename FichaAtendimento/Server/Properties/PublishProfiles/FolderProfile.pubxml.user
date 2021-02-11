@@ -5,5 +5,11 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Server\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="SQLConnection">
+      <Value>Server=localhost\sqlexpress%3bDatabase=FichaAtendimentoDB%3bTrusted_Connection=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>
