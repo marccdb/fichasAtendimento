@@ -12,30 +12,24 @@ namespace FichaAtendimento.Shared.Model
         [Required]
         public string NomePaciente { get; set; }
 
-        [Required]
         [Column(TypeName = "date")]
         public DateTime DataNascimento
         {
-            get { return DateTime.Now; }
-            set { }
+            get; set;
         }
 
         public string Nacionalidade { get; set; }
 
-        [Required]
         public string Endereco { get; set; }
 
         public string Profissao { get; set; }
 
-        [Required]
         public string Telefone { get; set; }
 
         public string Email { get; set; }
 
-        [Required]
         public string CPF { get; set; }
 
-        [Required]
         public string RG { get; set; }
 
         public string Escolaridade { get; set; }

@@ -4,14 +4,16 @@ using FichaAtendimento.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FichaAtendimento.Server.Migrations
 {
     [DbContext(typeof(FichaContext))]
-    partial class FichaContextModelSnapshot : ModelSnapshot
+    [Migration("20210211000607_adjust required fields")]
+    partial class adjustrequiredfields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
