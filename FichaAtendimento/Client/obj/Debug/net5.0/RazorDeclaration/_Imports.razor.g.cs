@@ -82,6 +82,13 @@ using FichaAtendimento.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "E:\Projetos\ProjetosWeb\FichaAtendimento\FichaAtendimento\Client\_Imports.razor"
+using FichaAtendimento.Client.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class _Imports : System.Object
     {
         #pragma warning disable 1998

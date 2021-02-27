@@ -1,7 +1,6 @@
 ﻿@page "/Pacientes"
-@using FichaAtendimento.Shared.Model
-@inject HttpClient Http
 @inject NavigationManager NavigationManager
+@inject FichaAtendimento.Client.Services.Helper _helper
 
 
 <style>
@@ -50,7 +49,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var paciente in sortedPacientesArr)
+            @foreach (var paciente in pacientesArr)
             {
                 <tr>
                     <td>@paciente.NomePaciente</td>
