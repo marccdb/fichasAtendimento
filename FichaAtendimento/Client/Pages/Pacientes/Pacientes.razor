@@ -39,42 +39,28 @@ else
             <tr>
                 <th>Paciente</th>
                 <th>Data Nascimento</th>
-                <th>Nacionalidade</th>
                 <th>Endereço</th>
                 <th>Profissão</th>
                 <th>Telefone</th>
                 <th>Email</th>
                 <th>CPF</th>
                 <th>RG</th>
-                <th>Escolaridade</th>
-                <th>Religiao</th>
-                <th>Nome do Pai</th>
-                <th>Idade Pai</th>
-                <th>Nome da Mãe</th>
-                <th>Idade Mãe</th>
                 <th>Recibo para</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var paciente in pacientesArr)
+            @foreach (var paciente in sortedPacientesArr)
             {
                 <tr>
                     <td>@paciente.NomePaciente</td>
                     <td>@paciente.DataNascimento.ToShortDateString()</td>
-                    <td>@paciente.Nacionalidade</td>
                     <td>@paciente.Endereco</td>
                     <td>@paciente.Profissao</td>
                     <td>@paciente.Telefone</td>
                     <td>@paciente.Email</td>
                     <td>@paciente.CPF</td>
                     <td>@paciente.RG</td>
-                    <td>@paciente.Escolaridade</td>
-                    <td>@paciente.Religiao</td>
-                    <td>@paciente.NomePai</td>
-                    <td>@paciente.IdadePai</td>
-                    <td>@paciente.NomeMae</td>
-                    <td>@paciente.IdadeMae</td>
                     <td>@paciente.ReciboPara</td>
                     <td>
                         <a class="nav-link" href="EditPaciente/@paciente.idPaciente">

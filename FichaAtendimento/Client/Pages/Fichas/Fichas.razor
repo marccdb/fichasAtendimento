@@ -37,7 +37,7 @@ else
 
     <div class="dropdown">
         <select @bind="@pacienteId" name="selecPaciente">
-            @foreach (var paciente in pacientesArr)
+            @foreach (var paciente in sortedPacientesArr)
             {
                 <option value="@paciente.idPaciente">@paciente.NomePaciente</option>
             }
@@ -51,10 +51,8 @@ else
                 <th>Nome</th>
                 <th>Resumo do Atendimento</th>
                 <th>Conduta Clínica</th>
-                <th>CID10/DSM</th>
-                <th>Próxima Tarefa</th>
-                <th>Proxima Abordagem</th>
                 <th>Data Atendimento</th>
+                <th>Observações</th>
                 <th>Sessão Paga?</th>
                 <th>Recibo Entregue?</th>
                 <th>Ações</th>
@@ -67,9 +65,7 @@ else
                     <td>@ficha.NomePaciente</td>
                     <td>@ficha.ResumoAtendimento</td>
                     <td>@ficha.CondutaClinica</td>
-                    <td>@ficha.CID10_DSM</td>
-                    <td>@ficha.ProxTarefa</td>
-                    <td>@ficha.AbordagemProxSessao</td>
+                    <td>@ficha.Observacoes</td>
                     <td>@ficha.DataAtendimento.ToShortDateString()</td>
                     <td>
                         @if (ficha.SessaoPaga == true)

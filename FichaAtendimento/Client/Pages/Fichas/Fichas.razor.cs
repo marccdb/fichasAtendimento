@@ -11,13 +11,15 @@ namespace FichaAtendimento.Client.Pages.Fichas
     {
 
         protected Paciente[] pacientesArr;
-
         protected Ficha[] fichas;
+        private IEnumerable<Paciente> sortedPacientesArr;
 
 
         protected override async Task OnInitializedAsync()
         {
             pacientesArr = await Http.GetFromJsonAsync<Paciente[]>("api/Pacientes");
+            sortedPacientesArr = pacientesArr.OrderBy(x => x.NomePaciente);
+
             fichas = await Http.GetFromJsonAsync<Ficha[]>("api/Fichas");
 
         }

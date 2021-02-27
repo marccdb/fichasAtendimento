@@ -10,7 +10,7 @@ namespace FichaAtendimento.Client.Pages.Fichas
     public partial class AddFicha
     {
         Ficha newFicha = new Ficha();
-
+        private IEnumerable<Paciente> sortedPacientesArr;
 
 
         private async Task CreateFicha()
@@ -31,6 +31,7 @@ namespace FichaAtendimento.Client.Pages.Fichas
         protected override async Task OnInitializedAsync()
         {
             pacientesArr = await Http.GetFromJsonAsync<Paciente[]>("api/Pacientes");
+            sortedPacientesArr = pacientesArr.OrderBy(x => x.NomePaciente);
             newFicha.DataAtendimento = DateTime.Now;
         }
     }

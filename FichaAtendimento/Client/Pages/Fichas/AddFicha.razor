@@ -7,11 +7,7 @@
 <hr />
 
 <style>
-    .control-label {
-        margin-top: 10px;
-    }
-
-    .divSessaoPaga {
+    .control-label, .divSessaoPaga {
         margin-top: 10px;
     }
 
@@ -36,7 +32,7 @@ else
 {
     <div class="dropdown">
         <select @bind="@newFicha.idPaciente" name="selecPaciente">
-            @foreach (var paciente in pacientesArr)
+            @foreach (var paciente in sortedPacientesArr)
             {
                 <option value="@paciente.idPaciente">@paciente.NomePaciente</option>
             }
@@ -54,12 +50,8 @@ else
                 <InputTextArea form="ResumoAtendimento" class="form-control" @bind-Value="@newFicha.ResumoAtendimento"></InputTextArea>
                 <label for="CondutaClínica" class="control-label">Conduta Clínica:</label>
                 <InputTextArea form="CondutaClínica" class="form-control" @bind-Value="@newFicha.CondutaClinica"></InputTextArea>
-                <label for="CID10/DSM" class="control-label">CID10/DSM:</label>
-                <InputText form="CID10/DSM" class="form-control" @bind-Value="@newFicha.CID10_DSM"></InputText>
-                <label for="ProxTarefa" class="control-label">Próxima Tarefa:</label>
-                <InputText form="ProxTarefa" class="form-control" @bind-Value="@newFicha.ProxTarefa"></InputText>
-                <label for="AbordagemProxSessao" class="control-label">Abordagem na Proxima Sessão:</label>
-                <InputTextArea form="AbordagemProxSessao" class="form-control" @bind-Value="@newFicha.AbordagemProxSessao"></InputTextArea>
+                <label for="Observacoes" class="control-label">Observações:</label>
+                <InputTextArea form="Observacoes" class="form-control" @bind-Value="@newFicha.Observacoes"></InputTextArea>
                 <label for="DataAtendimento" class="control-label">Data do Atendimento:</label>
                 <InputDate class="form-control" @bind-Value="@newFicha.DataAtendimento" />
 

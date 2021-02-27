@@ -23,10 +23,6 @@ namespace FichaAtendimento.Shared.Model
 
         public string CondutaClinica { get; set; }
 
-        public string ProxTarefa { get; set; }
-
-        public string CID10_DSM { get; set; }
-
         [Required]
         [Column(TypeName = "date")]
         public DateTime DataAtendimento
@@ -34,7 +30,7 @@ namespace FichaAtendimento.Shared.Model
             get; set;
         }
 
-        public string AbordagemProxSessao { get; set; }
+        public string Observacoes { get; set; }
 
         [Required]
         public bool ReciboEntregue { get; set; }
